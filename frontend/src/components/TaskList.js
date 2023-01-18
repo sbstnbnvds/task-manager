@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import React from "react"
+import TaskElement from "./TaskElement"
 
 const TaskList = () => {
 
@@ -23,9 +24,7 @@ const TaskList = () => {
   return (
     <>
       {tasks.map((task, index) => (
-        <li key={index}>
-          {task.body}
-        </li>
+        <TaskElement task={task} />
       ))}
     </>
   )
