@@ -1,9 +1,11 @@
 const TaskElement = ({ task }) => {
   return (
-    <li>
-      <h1>{task.body} </h1>
-      {task.due_date}
-    </li>
+    <div className="task">
+      <div className="task-body">{task.body} </div>
+      <div className="task-due-date">
+        {task.due_date}
+      </div>
+    </div>
   )
 }
 

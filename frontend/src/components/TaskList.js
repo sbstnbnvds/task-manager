@@ -21,14 +21,11 @@ const TaskList = () => {
   }, [/*tasks*/])
 
 
-  return (
-    <>
-    <div className="TaskList">
+  return (<>
       {tasks.map((task, index) => (
         <TaskElement task={task} key={index}/>
-      ))}
-    </div>
-    </>
+        ))}
+        </>
   )
 }
 

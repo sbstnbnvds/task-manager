@@ -13,31 +13,58 @@ body {
   width: 100%;
   height: 100%;
   padding: 3rem;
+  box-sizing: border-box;
 }
 
 /* Main */
 
-.main {
+.main {/*
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
   background-color: #00ffff;
-  width: auto;
-  align-self: center;
+  min-height: 10vh;
 }
 
 /* TaskList */
-
-.TaskList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  list-style-type: none;
+/*
+.task {
+  margin-bottom: 10px;
 }
 
-li {
+.task-body {
+  width: 70%;
+  border: 1px solid black;
+  padding: 15px;
+  float: left;
+}
+
+.task-due-date {
+  float: right;
+  align-items: center;
+  vertical-align: middle;
+  padding: 25px;
+}
+*/
+
+/* Grid Testing */
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.task {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.task-body {
+  grid-column: span 4;
+}
+
+.task-body .task-due-date {
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: 10px;
 }
