@@ -6,26 +6,28 @@ const TaskList = () => {
 
   let [tasks, setTasks] = useState([])
 
-
-  useEffect(() => {
-    fetchTasks()
-  }, [])
-
-
   let fetchTasks = async () => {
 
-    let response = await fetch('http://localhost:8000/api/')
+    let response = await fetch('/api/')
     let data = await response.json()
     setTasks(data)
 
     console.log(data)
+    console.log("test")
   }
+
+  useEffect(() => {
+    fetchTasks()
+  }, [/*tasks*/])
+
 
   return (
     <>
+    <div className="TaskList">
       {tasks.map((task, index) => (
-        <TaskElement task={task} />
+        <TaskElement task={task} key={index}/>
       ))}
+    </div>
     </>
   )
 }
